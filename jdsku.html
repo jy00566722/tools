@@ -1,0 +1,34 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta chartset="utf-8">
+	<title>JD SKU</title>
+	<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>
+
+</head>
+<body>
+
+<textarea rows="10" cols="30" id="img_str1"></textarea>
+
+<textarea rows="10" cols="30" id="img_str2"></textarea>
+<br />
+<button type="button" id='click'>加逗号连起来</button>
+
+
+<script type="text/javascript">
+$('#click').click(
+			function () {
+				var str_go = $('#img_str1').val().replace(/[ ]/g,"").replace(/[\r\n]/g,",");
+				console.log(str_go);
+				$('#img_str2').val(str_go);
+
+})
+
+
+</script>
+
+
+</body>
+
+
+</html>

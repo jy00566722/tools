@@ -1,0 +1,57 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>京东空包网地址格式化</title>
+	<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>
+
+</head>
+<body>
+
+<textarea rows="15" cols="100" id="img_str1"></textarea>
+
+<textarea rows="15" cols="100" id="img_str2"></textarea>
+<br />
+<button type="button" id='click'>转换格式</button>
+
+
+<script type="text/javascript">
+var str_go;
+var good_list=[];
+var str_gogo;
+$('#click').click(
+			function () {
+				str_go = $('#img_str1').val()
+				console.log(str_go);
+				a_list=str_go.split('\n');
+
+
+				for(j = 0,len=a_list.length; j < len; j++) {
+					b_list = a_list[j].split('\t');
+   
+					
+					a_add = b_list[1];
+					console.log(a_add);
+					if(a_add != undefined){
+						a_name = b_list[0];
+						b_add = a_add.replace(/(\S{2})(\S{1,3}[市|区|县])(\S{1,4}[市|区|县|镇])/,"$1 $2 $3 ");
+						a_phone = b_list[2];
+						good_list.push(a_name+','+a_phone+','+b_add+','+'100000');
+
+				}
+
+			}
+			console.log(good_list);
+
+				$('#img_str2').val(good_list.join('\n'));
+
+})
+
+
+</script>
+
+
+</body>
+
+
+</html>
