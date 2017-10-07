@@ -20,7 +20,9 @@ var str_go;
 var good_list=[];
 var str_gogo;
 $('#click').click(
+			
 			function () {
+				good_list.splice(0, good_list.length);
 				str_go = $('#img_str1').val()
 				console.log(str_go);
 				a_list=str_go.split('\n');
@@ -42,6 +44,8 @@ $('#click').click(
 
 			}
 			console.log(good_list);
+
+
 
 				$('#img_str2').val(good_list.join('\n'));
 
